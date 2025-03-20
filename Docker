@@ -1,0 +1,21 @@
+# Use an official Python 3.9 image
+FROM python:3.9.16-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy requirements.txt first for caching
+COPY requirements.txt .
+
+# Upgrade pip and install dependencies
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install -r requirements.txt
+
+# Copy the rest of the app code
+COPY . .
+
+# Expose Streamlit's default port
+EXPOSE 8501
+
+# Command to run the app
+CMD ["streamlit", "run", "script.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
