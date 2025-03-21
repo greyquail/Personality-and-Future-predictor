@@ -1,6 +1,0 @@
-streamlit==1.22.0
-torch
-transformers
-bitsandbytes
-accelerate
-sentencepiece
