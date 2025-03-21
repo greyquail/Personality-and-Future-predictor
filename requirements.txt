@@ -1,7 +1,0 @@
-streamlit==1.22.0
-numpy<2.0
-torch==2.0.1
-transformers==4.30.0
-textblob==0.17.1
-accelerate==0.20.3
-requests==2.32.3
